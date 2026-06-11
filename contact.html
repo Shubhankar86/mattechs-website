@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us — MATTECHS Solutions</title>
+  <title>Contact MATTECHS Solutions</title>
+  <meta name="description" content="Contact MATTECHS Solutions for AI-led innovation, manufacturing alignment, engineering excellence, technology integration, and strategic partnerships." />
+  <link rel="canonical" href="https://mattechsol.com/contact.html" />
+  <meta property="og:title" content="Contact MATTECHS Solutions" />
+  <meta property="og:description" content="Start a conversation with MATTECHS Solutions about AI, manufacturing, engineering, technology, or partnership needs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mattechsol.com/contact.html" />
+  <meta property="og:image" content="https://mattechsol.com/MATTECHSLogo-web.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
   <link rel="apple-touch-icon" href="favicon.png">
@@ -36,56 +43,25 @@
     }
 
     nav {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		height: 72px;
-		display: flex;
-		align-items: center;
-		padding: 0 48px;
-		background: rgba(255,255,255,0.92);
-		backdrop-filter: blur(12px);
-		border-bottom: 1px solid var(--border);
-		z-index: 1000;
-	}
-
-    .nav-logo {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); transition: box-shadow 0.3s;
     }
-
-    .nav-logo img {
-      height: 150px;
-    }
-
-    .nav-logo-text {
-      font-family: var(--serif);
-      font-weight:700;
-      color:var(--blue-deep);
-      font-size:18px;
-    }
-
-    .nav-links {
-	  position: absolute;
-	  left: 50%;
-	  transform: translateX(-50%);
-	  display:flex;
-      gap:30px;
-      list-style:none;
-    }
-
-    .nav-links a {
-      text-decoration:none;
-      color:var(--ink-soft);
-      font-size:14px;
-    }
-
-    .nav-links a:hover {
-      color:var(--blue-deep);
-    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 65px; width: auto; }
+    .nav-logo-text { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--blue-deep); }
+    .nav-links { display: flex; position: absolute; left: 50%; transform: translateX(-50%); gap: 30px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 400; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-deep); }
+    .nav-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--border); border-radius: 8px; background: var(--white); cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+    .nav-toggle span { width: 20px; height: 2px; border-radius: 2px; background: var(--blue-deep); transition: transform 0.2s, opacity 0.2s; }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .btn-ghost { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--ink-soft); background: transparent; border: none; cursor: pointer; text-decoration: none; transition: color 0.2s; }
+    .btn-ghost:hover { color: var(--blue-deep); }
+    .btn-primary { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--white); background: var(--blue-deep); border: none; cursor: pointer; padding: 10px 22px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
 
     .hero {
       padding:150px 48px 80px;
@@ -178,6 +154,15 @@
       gap:18px;
     }
 
+    label:not(.consent-label) {
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      color:var(--ink);
+      font-size:14px;
+      font-weight:700;
+    }
+
     input, textarea, select {
       width:100%;
       padding:16px;
@@ -191,6 +176,46 @@
     textarea {
       min-height:160px;
       resize:vertical;
+    }
+
+    .privacy-note {
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:var(--blue-pale);
+      color:var(--ink-soft);
+      font-size:14px;
+    }
+
+    .privacy-note a,
+    .consent-label a,
+    footer a {
+      color:var(--blue-deep);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .privacy-note a:hover,
+    .consent-label a:hover,
+    footer a:hover {
+      color:var(--blue-mid);
+    }
+
+    .consent-label {
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:var(--ink-soft);
+      font-size:14px;
+      line-height:1.55;
+      cursor:pointer;
+    }
+
+    .consent-label input {
+      width:auto;
+      margin-top:4px;
+      flex:0 0 auto;
+      accent-color:var(--blue-deep);
     }
 
     input:focus,
@@ -216,40 +241,42 @@
       transform:translateY(-2px);
     }
 
-    footer {
-      text-align:center;
-      padding:40px 20px;
-      border-top:1px solid var(--border);
-      color:var(--ink-soft);
-    }
+    footer { background: var(--blue-pale); border-top: 1px solid var(--border); padding: 56px 48px 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 14px; }
+    .footer-logo img { height: 55px; }
+    .footer-logo-text { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--blue-deep); }
+    .footer-tagline { font-size: 14px; font-weight: 300; color: var(--ink-soft); line-height: 1.7; max-width: 240px; }
+    .footer-col-title { font-family: var(--serif); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #A8BAD0; margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { font-size: 14px; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--blue-deep); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 13px; color: #A8BAD0; }
 
     @media(max-width:900px){
-      nav {
-        padding:0 20px;
-      }
-
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
       .container {
         grid-template-columns:1fr;
         padding:0 20px;
       }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 
       .hero {
         padding:130px 20px 60px;
       }
 
-      .nav-links {
-        display:none;
-      }
+    }
 
 	@media (max-width: 900px) {
-
   nav {
     height: 72px;
     padding: 0 16px;
   }
 
   .nav-logo img {
-    height: 90px;
+    height: 65px;
   }
 
   .nav-logo-text {
@@ -260,20 +287,49 @@
     font-size: 12px;
   }
     }
+    @media (max-width: 900px) {
+      .nav-toggle { display: flex; margin-left: auto; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        transform: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px;
+        background: rgba(255,255,255,0.98);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 14px 34px rgba(19,86,200,0.14);
+      }
+      nav.open .nav-links { display: flex; }
+      .nav-links a { display: block; padding: 12px 14px; font-size: 15px; }
+      nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+      nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+    @media(max-width:560px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
   </style>
 </head>
 <body>
 
-<nav>
+<nav id="main-nav">
   <a class="nav-logo" href="index.html">
-    <img src="MLogo.png" alt="MATTECHS Solutions">
-    <span class="nav-logo-text">MATTECHS 2.0</span>
+    <img src="MATTECHSLogo-web.png" alt="MATTECHS Solutions" />
+    <span class="nav-logo-text">MATTECHS Solutions</span>
   </a>
-
-  <ul class="nav-links">
-    <li><a href="index.html#solutions">About</a></li>
-    <li><a href="index.html#industries">Solutions</a></li>
-    <li><a href="contact.html">Contact</a></li>
+  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="primary-navigation">
+    <li><a href="company.html">Company</a></li>
+    <li><a href="index.html#solutions">Solutions</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
@@ -340,25 +396,53 @@
 
       <input type="hidden" name="access_key" value="a9aab970-8ed3-4cca-8fe3-ab594e7467da">
 
-      <input type="text" name="name" placeholder="Full Name" required>
+      <label>
+        Full Name
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
 
-      <input type="text" name="company" placeholder="Company Name">
+      <label>
+        Company Name
+        <input type="text" name="company" autocomplete="organization">
+      </label>
 
-      <input type="email" name="email" placeholder="Work Email" required>
+      <label>
+        Work Email
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
 
-      <input type="tel" name="phone" placeholder="Phone Number">
+      <label>
+        Phone Number
+        <input type="tel" name="phone" autocomplete="tel">
+      </label>
 
-      <select name="service">
-        <option value="">Select Inquiry Type</option>
-        <option>AI-led Innovation</option>
-        <option>Engineering Excellence</option>
-        <option>Manufacturing Alignment</option>
-        <option>Technology Integration</option>
-        <option>Strategic Partnership</option>
-        <option>General Inquiry</option>
-      </select>
+      <label>
+        Inquiry Type
+        <select name="service">
+          <option value="">Select Inquiry Type</option>
+          <option>AI-led Innovation</option>
+          <option>Engineering Excellence</option>
+          <option>Manufacturing Alignment</option>
+          <option>Technology Integration</option>
+          <option>Strategic Partnership</option>
+          <option>General Inquiry</option>
+        </select>
+      </label>
 
-      <textarea name="message" placeholder="Tell us about your requirement" required></textarea>
+      <label>
+        Requirement
+        <textarea name="message" placeholder="Tell us about your requirement" required></textarea>
+      </label>
+
+      <div class="privacy-note">
+        By submitting this form, you agree to our <a href="privacy-policy.html">Privacy Policy</a>.
+        We use your information only to respond to your inquiry and do not sell your personal data.
+      </div>
+
+      <label class="consent-label">
+        <input type="checkbox" name="consent" value="I agree to be contacted by MATTECHS and consent to affiliate sharing when needed for my request." required>
+        <span>I agree to be contacted by MATTECHS regarding my inquiry. I also consent to MATTECHS sharing my details with relevant third-party affiliates only when needed to fulfill my request.</span>
+      </label>
 
       <button type="submit">Discuss My Requirement</button>
     </form>
@@ -366,8 +450,44 @@
 </section>
 
 <footer>
-  Technology for Humankind • MATTECHS Solutions
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">
+        <img src="MATTECHSLogo-web.png" alt="MATTECHS Solutions" />
+        <span class="footer-logo-text">MATTECHS Solutions</span>
+      </a>
+      <p class="footer-tagline">© 2026 MATTECHS Solutions</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Core</div>
+      <ul>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="index.html#solutions">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">Technology for Humankind</span>
+    <span class="footer-copy">MATTECHS Solutions</span>
+  </div>
 </footer>
 
+<script>
+  const nav = document.getElementById('main-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  });
+  window.addEventListener('scroll', () => { nav.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(19,86,200,0.1)' : 'none'; });
+</script>
 </body>
 </html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company - MATTECHS Solutions</title>
+  <meta name="description" content="Learn about MATTECHS Solutions, our company vision, values, focus areas, and team." />
+  <link rel="canonical" href="https://mattechsol.com/company.html" />
+  <meta property="og:title" content="Company - MATTECHS Solutions" />
+  <meta property="og:description" content="Learn about MATTECHS Solutions, our company vision, values, focus areas, and team." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mattechsol.com/company.html" />
+  <meta property="og:image" content="https://mattechsol.com/MATTECHSLogo-web.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue-deep:#1356C8;
+      --blue-mid:#1A7EC8;
+      --blue-cyan:#2BBBD4;
+      --blue-teal:#1A6B7C;
+      --blue-light:#E6F4FB;
+      --blue-pale:#F4F8FD;
+      --ink:#0A1628;
+      --ink-soft:#5D6B82;
+      --ink-faint:#A8BAD0;
+      --border:#D8E5F3;
+      --white:#FFFFFF;
+      --serif:'Syne', sans-serif;
+      --sans:'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--blue-pale);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); transition: box-shadow 0.3s;
+    }
+
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 65px; width: auto; }
+    .nav-logo-text { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--blue-deep); }
+    .nav-links { display: flex; position: absolute; left: 50%; transform: translateX(-50%); gap: 30px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 400; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--blue-deep); }
+    .nav-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--border); border-radius: 8px; background: var(--white); cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 5px; }
+    .nav-toggle span { width: 20px; height: 2px; border-radius: 2px; background: var(--blue-deep); transition: transform 0.2s, opacity 0.2s; }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 13px 24px; border-radius: 8px;
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
+    }
+
+    .btn-primary { color: var(--white); background: var(--blue-deep); box-shadow: 0 8px 26px rgba(19,86,200,0.24); }
+    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-1px); }
+    .btn-outline { color: var(--ink); border: 1.5px solid #C5D5E8; background: transparent; }
+    .btn-outline:hover { color: var(--blue-deep); border-color: var(--blue-deep); background: var(--white); transform: translateY(-1px); }
+
+    .hero {
+      position: relative; overflow: hidden;
+      padding: 150px 48px 86px;
+      background: var(--blue-pale);
+    }
+
+    .hero::before {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 70% 55% at 20% 10%, rgba(19,86,200,0.09), transparent 62%),
+                  radial-gradient(ellipse 48% 42% at 86% 62%, rgba(43,187,212,0.08), transparent 58%);
+    }
+
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1120px; margin: 0 auto;
+      display: block;
+    }
+
+    .eyebrow {
+      text-transform: uppercase; letter-spacing: 2.5px;
+      color: var(--blue-deep); font-size: 12px; font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4.8vw, 56px);
+      line-height: 1.12;
+      letter-spacing: -0.8px;
+      margin-bottom: 24px;
+    }
+
+    h1 span,
+    .gradient-text {
+      background: linear-gradient(135deg, var(--blue-deep), var(--blue-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    section { padding: 96px 48px; }
+    .section-inner { max-width: 1120px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-cyan); margin-bottom: 14px; }
+    .section-title { font-family: var(--serif); font-size: clamp(32px, 4vw, 50px); font-weight: 700; line-height: 1.12; letter-spacing: -0.4px; }
+    .section-lead { margin-top: 18px; max-width: 760px; color: var(--ink-soft); font-size: 17px; font-weight: 300; line-height: 1.75; }
+
+    .story { background: var(--white); }
+    .story-grid { display: grid; grid-template-columns: minmax(360px, 0.95fr) 1.05fr; gap: 42px; align-items: stretch; }
+
+    .fact-panel {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--blue-pale);
+    }
+
+    .fact-row {
+      display: grid; grid-template-columns: 120px 1fr; gap: 16px;
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fact-row:last-child { border-bottom: none; }
+    .fact-label { font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--blue-deep); }
+    .fact-value { color: var(--ink-soft); font-size: 15px; }
+
+    .online-panel {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--blue-pale), var(--white));
+    }
+
+    .online-panel h2 {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1.16;
+      margin-bottom: 14px;
+    }
+
+    .online-panel p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 26px;
+    }
+
+    .online-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 48px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .principle-card {
+      background: var(--white);
+      min-height: 170px;
+      padding: 30px 26px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .principle-card:hover { background: var(--blue-pale); }
+    .principle-letter { font-family: var(--serif); font-size: 42px; font-weight: 800; line-height: 1; color: var(--blue-cyan); margin-bottom: 18px; }
+    .principle-card h3 { font-family: var(--serif); font-size: 17px; margin-bottom: 0; }
+
+    .team { background: var(--white); }
+    .team-header { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 44px; }
+    .team-header .section-lead { max-width: 520px; margin-top: 0; }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      min-height: 210px;
+      box-shadow: 0 8px 30px rgba(19,86,200,0.06);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .team-card:hover { box-shadow: 0 12px 34px rgba(19,86,200,0.12); transform: translateY(-3px); }
+
+    .avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--blue-light), var(--white));
+      border: 1px solid var(--border);
+      color: var(--blue-deep);
+      font-family: var(--serif);
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .team-card h3 { font-family: var(--serif); font-size: 20px; margin-bottom: 6px; }
+    .team-role { color: var(--blue-deep); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--blue-deep), #0D4BAF);
+      color: var(--white);
+      text-align: center;
+      padding: 82px 48px;
+    }
+
+    .cta-band h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+
+    .cta-band p {
+      max-width: 620px;
+      margin: 0 auto 34px;
+      color: rgba(255,255,255,0.78);
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .btn-white { color: var(--blue-deep); background: var(--white); box-shadow: none; }
+    .btn-white:hover { background: var(--blue-light); }
+
+    footer { background: var(--blue-pale); border-top: 1px solid var(--border); padding: 56px 48px 32px; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; margin-bottom: 14px; }
+    .footer-logo img { height: 55px; }
+    .footer-logo-text { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--blue-deep); }
+    .footer-tagline { font-size: 14px; font-weight: 300; color: var(--ink-soft); line-height: 1.7; max-width: 240px; }
+    .footer-col-title { font-family: var(--serif); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { font-size: 14px; color: var(--ink-soft); text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--blue-deep); }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 13px; color: var(--ink-faint); }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media(max-width: 1000px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .principles-grid,
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-header { display: block; }
+      .team-header .section-lead { margin-top: 18px; }
+    }
+
+    @media(max-width: 900px) {
+      nav { height: 72px; padding: 0 16px; }
+      .nav-logo img { height: 65px; }
+      .nav-logo-text { font-size: 14px; }
+      .nav-links { display: none; }
+      .hero { padding: 130px 20px 68px; }
+      section { padding: 76px 20px; }
+      .cta-band { padding: 72px 20px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media(max-width: 560px) {
+      h1 { font-size: clamp(34px, 12vw, 46px); }
+      .fact-row { grid-template-columns: 1fr; gap: 6px; }
+      .principles-grid,
+      .team-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+    }
+    @media (max-width: 900px) {
+      .nav-toggle { display: flex; margin-left: auto; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        transform: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px;
+        background: rgba(255,255,255,0.98);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 14px 34px rgba(19,86,200,0.14);
+      }
+      nav.open .nav-links { display: flex; }
+      .nav-links a { display: block; padding: 12px 14px; font-size: 15px; }
+      nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+      nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a class="nav-logo" href="index.html">
+    <img src="MATTECHSLogo-web.png" alt="MATTECHS Solutions" />
+    <span class="nav-logo-text">MATTECHS Solutions</span>
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="primary-navigation">
+    <li><a class="active" href="company.html">Company</a></li>
+    <li><a href="index.html#solutions">Solutions</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">Our Vision and Mission</div>
+      <h1>We envision a world where <span>manufacturing, AI-led innovation, technology, and talent</span> come together to enable flawless execution. With <span>customer and humankind focus</span> at heart, we build <span>sustainable systems</span> for long-term and responsible growth.</h1>
+      <div class="hero-actions">
+        <a class="btn-primary" href="index.html#solutions">Explore Solutions</a>
+        <a class="btn-outline" href="contact.html">Connect with Us</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="team reveal">
+  <div class="section-inner">
+    <div class="team-header">
+      <div>
+        <div class="section-label">Team</div>
+        <h2 class="section-title">A multidisciplinary team for industrial transformation.</h2>
+      </div>
+    </div>
+
+    <div class="team-grid">
+      <article class="team-card">
+        <div class="avatar">01</div>
+        <h3>Anand Somavanshi</h3>
+        <div class="team-role">Director - Operations</div>
+      </article>
+      <article class="team-card">
+        <div class="avatar">02</div>
+        <h3>Prakash Kulkarni</h3>
+        <div class="team-role">Director - Sales</div>
+      </article>
+      <article class="team-card">
+        <div class="avatar">03</div>
+        <h3>Murali Namanna</h3>
+        <div class="team-role">Director - Technology</div>
+      </article>
+      <article class="team-card">
+        <div class="avatar">04</div>
+        <h3>Nayana Balkundi</h3>
+        <div class="team-role">Executive Director</div>
+      </article>
+      <article class="team-card">
+        <div class="avatar">05</div>
+        <h3>Shubhankar Balkundi</h3>
+        <div class="team-role">Operations and Marketing</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="section-inner">
+    <div class="section-label">Values</div>
+    <h2 class="section-title">The MATTECHS principles</h2>
+    <p class="section-lead">
+      The company name already carries the operating system: Manufacturing,
+      AI, Technology, Talent, Excellence, Customer focus, Humankind, and
+      Sustainable systems.
+    </p>
+
+    <div class="principles-grid">
+      <article class="principle-card">
+        <div class="principle-letter">M</div>
+        <h3>Manufacturing Alignment</h3>
+      </article>
+      <article class="principle-card">
+        <div class="principle-letter">A</div>
+        <h3>AI-led Innovation</h3>
+      </article>
+      <article class="principle-card">
+        <div class="principle-letter">T</div>
+        <h3>Technology Integration</h3>
+      </article>
+      <article class="principle-card">
+        <div class="principle-letter">T</div>
+        <h3>Talent Supply</h3>
+      </article>
+      <article class="principle-card">
+        <div class="principle-letter">E</div>
+        <h3>Engineering Excellence</h3>
+      </article>
+      <article class="principle-card">
+        <div class="principle-letter">C</div>
+        <h3>Customer Focus</h3>
+      </article>
+      <article class="principle-card">
+        <div class="principle-letter">H</div>
+        <h3>Humankind First</h3>
+      </article>
+      <article class="principle-card">
+        <div class="principle-letter">S</div>
+        <h3>Sustainable Systems</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="story reveal">
+  <div class="section-inner story-grid">
+    <aside class="fact-panel">
+      <div class="fact-row">
+        <div class="fact-label">Company</div>
+        <div class="fact-value">MATTECHS Solutions</div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-label">Focus</div>
+        <div class="fact-value">AI, manufacturing, engineering, technology integration, and strategic partnerships.</div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-label">Office</div>
+        <div class="fact-value">C-403, Ruturang Apartments, S.No.41, Behind Paranjape School, Kothrud, Pune 411038</div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-label">Plant</div>
+        <div class="fact-value">Gate No 97/3/4, Post Kuruli, Khed Taluka, Pune 410501</div>
+      </div>
+    </aside>
+
+    <div class="online-panel">
+      <div class="section-label">Find us online</div>
+      <h2>Connect with MATTECHS beyond the website.</h2>
+      <p>Follow our updates and find our business presence online.</p>
+      <div class="online-actions">
+        <a class="btn-primary" href="https://www.linkedin.com/search/results/companies/?keywords=MATTECHS%20Solutions" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="btn-outline" href="https://www.google.com/search?q=MATTECHS%20Solutions%20Pune" target="_blank" rel="noopener noreferrer">Google</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band reveal">
+  <h2>Ready to build with MATTECHS?</h2>
+  <p>
+    Tell us what you are working on, and we will help shape the right next step
+    across AI-led innovation, engineering excellence, and manufacturing alignment.
+  </p>
+  <a class="btn-primary btn-white" href="contact.html">Contact MATTECHS</a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-logo" href="index.html">
+        <img src="MATTECHSLogo-web.png" alt="MATTECHS Solutions" />
+        <span class="footer-logo-text">MATTECHS Solutions</span>
+      </a>
+      <p class="footer-tagline">© 2026 MATTECHS Solutions</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Core</div>
+      <ul>
+        <li><a href="company.html">Company</a></li>
+        <li><a href="index.html#solutions">Solutions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Legal</div>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">Technology for Humankind</span>
+    <span class="footer-copy">MATTECHS Solutions</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    }
+  }), { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  const nav = document.getElementById('main-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  navToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+  });
+  window.addEventListener('scroll', () => {
+    nav.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(19,86,200,0.1)' : 'none';
+  });
+</script>
+</body>
+</html>
