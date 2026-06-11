@@ -211,27 +211,19 @@
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 26px;
-      min-height: 210px;
+      padding: 28px 22px;
+      min-height: 150px;
       box-shadow: 0 8px 30px rgba(19,86,200,0.06);
       transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .team-card:hover { box-shadow: 0 12px 34px rgba(19,86,200,0.12); transform: translateY(-3px); }
 
-    .avatar {
-      width: 64px; height: 64px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--blue-light), var(--white));
-      border: 1px solid var(--border);
-      color: var(--blue-deep);
-      font-family: var(--serif);
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-
-    .team-card h3 { font-family: var(--serif); font-size: 20px; margin-bottom: 6px; }
-    .team-role { color: var(--blue-deep); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+    .team-card h3 { font-family: var(--serif); font-size: 18px; line-height: 1.25; margin-bottom: 12px; }
+    .team-role { color: var(--blue-deep); font-size: 11px; font-weight: 800; letter-spacing: 1.3px; line-height: 1.45; text-transform: uppercase; }
 
     .cta-band {
       background: linear-gradient(135deg, var(--blue-deep), #0D4BAF);
@@ -376,27 +368,22 @@
 
     <div class="team-grid">
       <article class="team-card">
-        <div class="avatar">01</div>
         <h3>Anand Somavanshi</h3>
         <div class="team-role">Director - Operations</div>
       </article>
       <article class="team-card">
-        <div class="avatar">02</div>
         <h3>Prakash Kulkarni</h3>
         <div class="team-role">Director - Sales</div>
       </article>
       <article class="team-card">
-        <div class="avatar">03</div>
         <h3>Murali Namanna</h3>
         <div class="team-role">Director - Technology</div>
       </article>
       <article class="team-card">
-        <div class="avatar">04</div>
         <h3>Nayana Balkundi</h3>
         <div class="team-role">Executive Director</div>
       </article>
       <article class="team-card">
-        <div class="avatar">05</div>
         <h3>Shubhankar Balkundi</h3>
         <div class="team-role">Operations and Marketing</div>
       </article>
